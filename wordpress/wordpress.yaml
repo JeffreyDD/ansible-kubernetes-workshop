@@ -1,0 +1,13 @@
+- name: Deploy Wordpress on Kubernetes
+  hosts: localhost
+
+  vars:
+    wp_namespace: wordpress
+
+  tasks:
+  - include_tasks: tasks/resources.yaml
+
+
+- name: Deploy Wordpress on Kubernetes
+  hosts: localhost
+

@@ -1,0 +1,15 @@
+- name: Create namespace
+  k8s:
+    kind: Namespace
+    name: "{{ wp_namespace }}"
+
+- name: Apply resources
+  loop:
+  - wp-mysql-deployment.yaml
+  - wp-mysql-service.yaml
+  - wp-deployment.yaml
+  - wp-service.yaml
+  - wp-ingress.yaml
+  k8s:
+    namespace: "{{ wp_namespace }}"
+    resource_definition: "{{ lookup('file', 'files/' + item ) }}"
