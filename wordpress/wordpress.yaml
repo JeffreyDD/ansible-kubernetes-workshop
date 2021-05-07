@@ -11,3 +11,18 @@
 - name: Deploy Wordpress on Kubernetes
   hosts: localhost
 
+  vars:
+    wp_namespace: wordpress
+    wp_fqdn: wordpress.localtest.me
+    wp_db_host: mysql
+    wp_db_name: wordpress
+    wp_db_user: wordpress
+    wp_db_password: SuperSecret
+    wp_db_root_password: EvenMoreSecret
+
+  tasks:
+  - include_tasks: tasks/resources-and-helm.yaml
+
+  tags:
+    - never
+    - use-helm

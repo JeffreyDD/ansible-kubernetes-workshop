@@ -1,0 +1,36 @@
+- name: Create namespace
+  k8s:
+    kind: Namespace
+    name: "{{ wp_namespace }}"
+
+
+- name: Install MySQL using Helm
+  community.kubernetes.helm:
+    release_name: mysql
+    release_namespace: "{{ wp_namespace }}"
+    chart_ref: mysql
+    chart_repo_url: https://charts.bitnami.com/bitnami
+    chart_version: 8.5.7
+    release_values:
+      auth:
+        database: "{{ wp_db_name }}"
+        username: "{{ wp_db_user }}"
+        password: "{{ wp_db_password }}"
+        rootPassword: "{{ wp_db_root_password }}"
+
+
+- name: Apply resources
+  loop:
+  - wp-deployment.yaml
+  - wp-service.yaml
+  - wp-ingress.yaml
+  k8s:
+    namespace: "{{ wp_namespace }}"
+    resource_definition: "{{ lookup('template', 'templates/' + item ) }}"
+
+
+# - name: Test Ingress
+#   get_uri:
+#     url: wordpress.localtest.me
+#     statuscode: 200
+#   retry: 10
