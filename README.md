@@ -8,9 +8,13 @@ Introduction to deploying on Kubernetes using Ansible.
 
 Before taking part in the workshop, please make sure your local system has the following applications installed:
 
-- [Ansible 3.x](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
+- [Ansible 2.9+](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/)
 - [Helm 3](https://helm.sh/docs/intro/install/)
+
+Not required, but recommended for an optimal experience:
+- [Visual Studio Code](https://code.visualstudio.com/download)
+- [K9s](https://github.com/derailed/k9s#installation)
 
 #### Windows Notes
 
