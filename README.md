@@ -12,7 +12,14 @@ Before taking part in the workshop, please make sure your local system has the f
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/)
 - [Helm 3](https://helm.sh/docs/intro/install/)
 
+You will also need a copy of this repository:
+
+- [Download a zip](https://github.com/JeffreyDD/ansible-kubernetes-workshop/archive/refs/heads/main.zip)
+- `git clone https://github.com/JeffreyDD/ansible-kubernetes-workshop.git`
+
+
 Not required, but recommended for an optimal experience:
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [Visual Studio Code](https://code.visualstudio.com/download)
 - [K9s](https://github.com/derailed/k9s#installation)
 
