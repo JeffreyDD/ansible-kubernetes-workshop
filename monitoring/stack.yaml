@@ -1,0 +1,11 @@
+- name: Install monitoring stack
+  hosts: localhost
+
+  tasks:
+  - name: Install Kube-Prometheus Stack
+    community.kubernetes.helm:
+      release_name: monitoring
+      release_namespace: observability
+      chart_ref: kube-prometheus-stack
+      chart_repo_url: https://prometheus-community.github.io/helm-charts
+      # chart_version: 8.5.7
