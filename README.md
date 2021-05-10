@@ -14,8 +14,12 @@ Before taking part in the workshop, please make sure your local system has the f
 
 You will also need a copy of this repository:
 
-- [Download a zip](https://github.com/JeffreyDD/ansible-kubernetes-workshop/archive/refs/heads/main.zip)
-- `git clone https://github.com/JeffreyDD/ansible-kubernetes-workshop.git`
+- [Download a zip](https://github.com/JeffreyDD/ansible-kubernetes-workshop/archive/refs/heads/complete.zip)
+- ```
+  git clone https://github.com/JeffreyDD/ansible-kubernetes-workshop.git
+  cd ansible-kubernetes-workshop
+  git checkout complete
+  ```
 
 
 Not required, but recommended for an optimal experience:
@@ -58,3 +62,21 @@ For most users, running this locally for the workshop is the way to go. There ar
   - Deploy Ingress Controller
     - [MacOS](https://kubernetes.github.io/ingress-nginx/deploy/#docker-for-mac)
       *These instructions should work just fine on windows as well, though they have not been tested*
+
+#### Configuring `/etc/hosts`
+
+As we'll be using hostname-based ingresses during the workshop, you'll need to update your `hosts` file.
+
+> For most **Docker Desktop** users this step isn't required. If you are facing issues during the workshop, apply the following configuration, but replace `<minikube-ip>` with 127.0.0.1, or whatever is appropriate for your custom docker setup.
+
+Add the following lines to your hosts file, replacing `<minikube-ip>` with the output of the `minikube ip` command. You can follow [these instructions on updating your hosts file on Windows, Linux and MacOS](https://www.howtogeek.com/howto/27350/beginner-geek-how-to-edit-your-hosts-file/) to do so.
+
+```
+<minikube-ip>	wordpress.localtest.me
+<minikube-ip>	prometheus.localtest.me
+<minikube-ip>	grafana.localtest.me
+<minikube-ip>	alertmanager.localtest.me
+<minikube-ip>	mattermost.localtest.me
+<minikube-ip>	home.localtest.me
+<minikube-ip>	dashboard.localtest.me
+```
