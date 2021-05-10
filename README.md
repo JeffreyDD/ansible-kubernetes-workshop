@@ -14,8 +14,12 @@ Before taking part in the workshop, please make sure your local system has the f
 
 You will also need a copy of this repository:
 
-- [Download a zip](https://github.com/JeffreyDD/ansible-kubernetes-workshop/archive/refs/heads/main.zip)
-- `git clone https://github.com/JeffreyDD/ansible-kubernetes-workshop.git`
+- [Download a zip](https://github.com/JeffreyDD/ansible-kubernetes-workshop/archive/refs/heads/complete.zip)
+- ```
+  git clone https://github.com/JeffreyDD/ansible-kubernetes-workshop.git
+  cd ansible-kubernetes-workshop
+  git checkout complete
+  ```
 
 
 Not required, but recommended for an optimal experience:
