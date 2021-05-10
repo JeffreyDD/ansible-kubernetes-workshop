@@ -1,0 +1,21 @@
+- name: Install monitoring stack
+  hosts: localhost
+  tasks:
+  - name: Create namespace
+    community.kubernetes.k8s:
+      kind: Namespace
+      name: observability
+
+  - name: Install Kubernetes Dashboard
+    community.kubernetes.helm:
+      release_name: dashboard
+      release_namespace: observability
+      chart_ref: kubernetes-dashboard
+      chart_repo_url: https://kubernetes.github.io/dashboard/
+      values:
+        ingress:
+          enabled: true
+          hosts:
+            - dashboard.localtest.me
+
+  - include_tasks: tasks/dashboard_service_account.yaml
