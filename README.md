@@ -80,3 +80,9 @@ Add the following lines to your hosts file, replacing `<minikube-ip>` with the o
 <minikube-ip>	home.localtest.me
 <minikube-ip>	dashboard.localtest.me
 ```
+
+
+## FAQ
+
+**`Error: failed to create resource: Internal error occurred: failed calling webhook \"validate.nginx.ingress.kubernetes.io\": an error on the server (\"\") has prevented the request from succeeding`**
+The following should fix the issue on minikube: `kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission`
