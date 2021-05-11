@@ -1,0 +1,15 @@
+ingresses:
+  - name: prometheus
+    fqdn: prometheus.localtest.me
+    service: monitoring-kube-prometheus-prometheus
+    port: 9090
+
+  - name: grafana
+    fqdn: grafana.localtest.me
+    service: monitoring-grafana
+    port: 80
+    
+  - name: alertmanager
+    fqdn: alertmanager.localtest.me
+    service: monitoring-kube-prometheus-alertmanager
+    port: 9093
